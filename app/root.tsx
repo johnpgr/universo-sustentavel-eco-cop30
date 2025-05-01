@@ -23,6 +23,17 @@ export const links: Route.LinksFunction = () => [
     },
 ]
 
+export function meta({}: Route.MetaArgs) {
+    return [
+        { title: "Universo Sustentável - Sustentabilidade para COP 30" },
+        {
+            name: "description",
+            content:
+                "Aplicativo para promover práticas sustentáveis em Belém, com foco na separação e descarte correto de resíduos.",
+        },
+    ]
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
