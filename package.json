@@ -2,6 +2,7 @@
     "name": "alta-performance-web-react",
     "private": true,
     "type": "module",
+    "packageManager": "pnpm@9.13.2",
     "scripts": {
         "build": "react-router build",
         "dev": "react-router dev",
