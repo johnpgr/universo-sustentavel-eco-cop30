@@ -1,0 +1,7 @@
+{
+    "name": "universo-sustentavel",
+    "compatibility_date": "2025-05-01",
+    "assets": {
+        "directory": "./build/client"
+    }
+}
