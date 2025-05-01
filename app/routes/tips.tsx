@@ -29,17 +29,17 @@ export default function TipsPage() {
                 </p>
 
                 <Tabs defaultValue="plastic" className="w-full">
-                    <TabsList className="grid grid-cols-4 h-auto">
-                        <TabsTrigger value="plastic" className="text-xs py-2">
+                    <TabsList className="grid grid-cols-4 h-auto w-full">
+                        <TabsTrigger value="plastic" className="text-xs text-red-500 py-2">
                             Plástico
                         </TabsTrigger>
-                        <TabsTrigger value="paper" className="text-xs py-2">
+                        <TabsTrigger value="paper" className="text-xs text-blue-500 py-2">
                             Papel
                         </TabsTrigger>
-                        <TabsTrigger value="metal" className="text-xs py-2">
+                        <TabsTrigger value="metal" className="text-xs text-yellow-500 py-2">
                             Metal
                         </TabsTrigger>
-                        <TabsTrigger value="glass" className="text-xs py-2">
+                        <TabsTrigger value="glass" className="text-xs text-green-500 py-2">
                             Vidro
                         </TabsTrigger>
                     </TabsList>
