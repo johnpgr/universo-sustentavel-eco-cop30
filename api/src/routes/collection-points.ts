@@ -155,4 +155,21 @@ router.put("/:id", async (req, res) => {
     }
 })
 
+router.delete("/:id", async (req, res) => {
+    const { id } = req.params
+
+    try {
+        const point = await CollectionPoint.findByPk(id)
+        if (point) {
+            await point.destroy()
+            res.status(204).send()
+        } else {
+            res.status(404).json({ message: "Ponto de coleta não encontrado." })
+        }
+    } catch (error) {
+        console.error("Erro ao excluir ponto de coleta:", error)
+        res.status(500).json({ message: "Erro ao excluir ponto de coleta." })
+    }
+})
+
 export { router as CollectionPointsRouter }
