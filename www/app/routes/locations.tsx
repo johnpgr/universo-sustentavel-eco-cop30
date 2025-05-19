@@ -1,12 +1,18 @@
 import { Card, CardContent } from "~/components/ui/card"
 import { MapPin, Clock, ArrowLeft } from "lucide-react"
 import { Button } from "~/components/ui/button"
-import { Link } from "react-router"
+import { Link, useLoaderData } from "react-router"
 import useGeolocation from "~/hooks/use-geolocation"
-import { collectionPoints } from "~/lib/data"
 import { getDistance } from "~/lib/distance"
+import { getCollectionPoints } from "~/lib/api"
+import type { CollectionPoint } from "~/lib/types"
+
+export async function clientLoader() {
+    return await getCollectionPoints()
+}
 
 export default function LocationsPage() {
+    const collectionPoints = useLoaderData() as CollectionPoint[]
     const userCoords = useGeolocation()
 
     return (

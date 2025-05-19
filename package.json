@@ -1,48 +1,24 @@
 {
-    "name": "alta-performance-web-react",
-    "private": true,
-    "type": "module",
-    "packageManager": "pnpm@9.13.2",
-    "scripts": {
-        "build": "react-router build",
-        "dev": "react-router dev",
-        "start": "react-router-serve ./build/server/index.js",
-        "typecheck": "react-router typegen && tsc"
-    },
-    "prettier": {
-        "semi": false,
-        "tabWidth": 4
-    },
-    "dependencies": {
-        "@radix-ui/react-accordion": "^1.2.8",
-        "@radix-ui/react-slot": "^1.2.0",
-        "@radix-ui/react-tabs": "^1.1.9",
-        "@react-router/node": "^7.5.3",
-        "@react-router/serve": "^7.5.3",
-        "class-variance-authority": "^0.7.1",
-        "clsx": "^2.1.1",
-        "isbot": "^5.1.27",
-        "leaflet": "^1.9.4",
-        "lucide-react": "^0.503.0",
-        "react": "^19.1.0",
-        "react-dom": "^19.1.0",
-        "react-leaflet": "5.0.0-rc.2",
-        "react-router": "^7.5.3",
-        "sharp": "^0.34.1",
-        "tailwind-merge": "^3.2.0"
-    },
-    "devDependencies": {
-        "@react-router/dev": "^7.5.3",
-        "@tailwindcss/vite": "^4.1.5",
-        "@types/leaflet": "^1.9.17",
-        "@types/node": "^20",
-        "@types/react": "^19.1.2",
-        "@types/react-dom": "^19.1.2",
-        "tailwindcss": "^4.1.5",
-        "tw-animate-css": "^1.2.8",
-        "typescript": "^5.8.3",
-        "vite": "^6.3.3",
-        "vite-tsconfig-paths": "^5.1.4",
-        "wrangler": "^4.14.1"
-    }
+  "name": "universo-sustentavel-eco-cop30",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "pnpm -r dev",
+    "build": "pnpm -r build",
+    "start": "pnpm -r start",
+    "typecheck": "pnpm -r typecheck",
+    "format": "pnpm -r format"
+  },
+  "type": "module",
+  "packageManager": "pnpm@10.7.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnpgr/universo-sustentavel-eco-cop30.git"
+  },
+  "author": "johnpgr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnpgr/universo-sustentavel-eco-cop30/issues"
+  },
+  "homepage": "https://github.com/johnpgr/universo-sustentavel-eco-cop30#readme",
+  "description": "Universo sustentavel, projeto web app para COP30"
 }

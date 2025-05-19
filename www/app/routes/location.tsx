@@ -10,14 +10,15 @@ import {
 } from "lucide-react"
 import { Button } from "~/components/ui/button"
 import type { Route } from "./+types/locations"
-import { Link } from "react-router"
+import { Link, useLoaderData, type LoaderFunctionArgs } from "react-router"
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
 import L from "leaflet"
 import markerIcon from "leaflet/dist/images/marker-icon.png"
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png"
 import markerShadow from "leaflet/dist/images/marker-shadow.png"
-import { collectionPoints, type CollectionPoint } from "~/lib/data"
+import type { CollectionPoint } from "~/lib/types"
+import { getCollectionPoint } from "~/lib/api"
 
 // fix leaflet default icon paths
 delete (L.Icon.Default.prototype as any)._getIconUrl
@@ -27,17 +28,14 @@ L.Icon.Default.mergeOptions({
     shadowUrl: markerShadow,
 })
 
-
-export default function LocationDetailPage({ params }: Route.MetaArgs) {
+export async function clientLoader({ params }: LoaderFunctionArgs) {
     const { id } = params
-    const [location, setLocation] = useState<CollectionPoint | null>(null)
+    if (!id) throw new Error("ID is required")
+    return await getCollectionPoint(id)
+}
 
-    useEffect(() => {
-        const foundLocation = collectionPoints.find((point) => point.id === id)
-        if (foundLocation) {
-            setLocation(foundLocation)
-        }
-    }, [id])
+export default function LocationDetailPage() {
+    const location = useLoaderData() as CollectionPoint
 
     if (!location) {
         return (
