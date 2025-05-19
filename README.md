@@ -37,7 +37,7 @@ Para ver o projeto funcionando localmente, siga estes passos simples:
     ```
 
 4.  **Acesse no navegador:**
-    Abra seu navegador de internet (como Chrome, Firefox, etc.) e acesse o endereço que aparecer no terminal (geralmente `http://localhost:5173`).
+    Abra seu navegador de internet (como Chrome, Firefox, etc.) e acesse o endereço que aparecer no terminal (geralmente `http://localhost:3000`).
 
 Pronto! Agora você pode navegar pelo aplicativo Universo Sustentável na sua máquina.
 
@@ -86,5 +86,3 @@ O backend utiliza um banco de dados (configurado via Sequelize, por padrão SQLi
 *   **`Material`**: Representa um tipo de material reciclável.
     *   Campos: `id`, `name`.
     *   Relacionamento: Associado a múltiplos `CollectionPoint`.
-
-Os dados iniciais de pontos de coleta e materiais são populados através de seeders (ver `api/src/seeders`).
