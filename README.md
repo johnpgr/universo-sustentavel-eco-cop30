@@ -40,3 +40,51 @@ Para ver o projeto funcionando localmente, siga estes passos simples:
     Abra seu navegador de internet (como Chrome, Firefox, etc.) e acesse o endereço que aparecer no terminal (geralmente `http://localhost:5173`).
 
 Pronto! Agora você pode navegar pelo aplicativo Universo Sustentável na sua máquina.
+
+## Arquitetura do Projeto
+
+O projeto é dividido em duas partes principais:
+
+*   **API (Backend):** Construída com Node.js, Express e Sequelize, responsável por gerenciar os dados dos pontos de coleta e materiais recicláveis.
+*   **WWW (Frontend):** Um aplicativo React (usando Remix) que consome a API para exibir as informações aos usuários.
+
+### API Endpoints
+
+A API fornece os seguintes endpoints para gerenciar os pontos de coleta:
+
+*   **`GET /api/collection-points`**: Lista todos os pontos de coleta.
+    *   Retorna um array de objetos, cada um representando um ponto de coleta com seus detalhes e materiais aceitos.
+*   **`GET /api/collection-points/:id`**: Obtém um ponto de coleta específico pelo seu ID.
+    *   Retorna um objeto com os detalhes do ponto de coleta.
+*   **`POST /api/collection-points`**: Cria um novo ponto de coleta.
+    *   Corpo da requisição (JSON):
+        ```json
+        {
+          "name": "Nome do Ponto",
+          "address": "Endereço Completo",
+          "materials": ["Plástico", "Papel"],
+          "hours": "Seg-Sex: 08h-18h",
+          "phone": "(91) 99999-9999",
+          "website": "https://exemplo.com",
+          "description": "Descrição adicional",
+          "latitude": -1.4558,
+          "longitude": -48.5038
+        }
+        ```
+    *   Retorna o objeto do ponto de coleta criado com status 201.
+*   **`PUT /api/collection-points/:id`**: Atualiza um ponto de coleta existente.
+    *   Corpo da requisição (JSON): Similar ao `POST`.
+    *   Retorna o objeto do ponto de coleta atualizado.
+
+### Armazenamento de Dados (Banco de Dados)
+
+O backend utiliza um banco de dados (configurado via Sequelize, por padrão SQLite para desenvolvimento) para persistir as informações. As principais entidades são:
+
+*   **`CollectionPoint`**: Representa um ponto de coleta.
+    *   Campos: `id`, `name`, `address`, `hours`, `phone`, `website`, `description`, `latitude`, `longitude`.
+    *   Relacionamento: Possui uma relação de muitos-para-muitos com `Material`.
+*   **`Material`**: Representa um tipo de material reciclável.
+    *   Campos: `id`, `name`.
+    *   Relacionamento: Associado a múltiplos `CollectionPoint`.
+
+Os dados iniciais de pontos de coleta e materiais são populados através de seeders (ver `api/src/seeders`).
