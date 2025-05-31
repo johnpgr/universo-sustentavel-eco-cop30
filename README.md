@@ -46,7 +46,7 @@ Pronto! Agora você pode navegar pelo aplicativo Universo Sustentável na sua m�
 O projeto é dividido em duas partes principais:
 
 *   **API (Backend):** Construída com Node.js, Express e Sequelize, responsável por gerenciar os dados dos pontos de coleta e materiais recicláveis.
-*   **WWW (Frontend):** Um aplicativo React (usando Remix) que consome a API para exibir as informações aos usuários.
+*   **WWW (Frontend):** Um aplicativo React (usando React Router) que consome a API para exibir as informações aos usuários.
 
 ### API Endpoints
 

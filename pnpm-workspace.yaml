@@ -1,3 +1,9 @@
 packages:
-  - 'api/**'
-  - 'www/**'
+  - api/**
+  - www/**
+onlyBuiltDependencies:
+  - '@tailwindcss/oxide'
+  - esbuild
+  - sharp
+  - sqlite3
+  - workerd
