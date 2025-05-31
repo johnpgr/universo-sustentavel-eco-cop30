@@ -1,12 +1,8 @@
 import { Card, CardContent } from "~/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, Recycle } from "lucide-react"
 import { Button } from "~/components/ui/button"
 import { Link } from "react-router"
-import ImgRecycleGlass from "~/assets/reciclagem-vidro.webp"
-import ImgRecyclePlastic from "~/assets/reciclagem-plastico.webp"
-import ImgRecyclePaper from "~/assets/reciclagem-papel.webp"
-import ImgRecycleMetal from "~/assets/reciclagem-metal.webp"
 
 export default function TipsPage() {
     return (
@@ -52,12 +48,8 @@ export default function TipsPage() {
                         <Card className="border-green-200">
                             <CardContent className="p-4">
                                 <div className="flex justify-center mb-4">
-                                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center overflow-hidden">
-                                        <img
-                                            src={ImgRecyclePlastic}
-                                            alt="Ícone de plástico"
-                                            className="w-16 h-16 object-cover"
-                                        />
+                                    <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center overflow-hidden">
+                                        <Recycle size={40} color="white" />
                                     </div>
                                 </div>
 
@@ -138,12 +130,8 @@ export default function TipsPage() {
                         <Card className="border-green-200">
                             <CardContent className="p-4">
                                 <div className="flex justify-center mb-4">
-                                    <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center overflow-hidden">
-                                        <img
-                                            src={ImgRecyclePaper}
-                                            alt="Ícone de papel"
-                                            className="w-16 h-16 object-cover"
-                                        />
+                                    <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center overflow-hidden">
+                                        <Recycle size={40} color="white" />
                                     </div>
                                 </div>
 
@@ -226,12 +214,8 @@ export default function TipsPage() {
                         <Card className="border-green-200">
                             <CardContent className="p-4">
                                 <div className="flex justify-center mb-4">
-                                    <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden">
-                                        <img
-                                            src={ImgRecycleMetal}
-                                            alt="Ícone de metal"
-                                            className="w-16 h-16 object-cover"
-                                        />
+                                    <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center overflow-hidden">
+                                        <Recycle size={40} color="white" />
                                     </div>
                                 </div>
 
@@ -317,12 +301,8 @@ export default function TipsPage() {
                         <Card className="border-green-200">
                             <CardContent className="p-4">
                                 <div className="flex justify-center mb-4">
-                                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center overflow-hidden">
-                                        <img
-                                            src={ImgRecycleGlass}
-                                            alt="Ícone de vidro"
-                                            className="w-16 h-16 object-cover"
-                                        />
+                                    <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center overflow-hidden">
+                                        <Recycle size={40} color="white" />
                                     </div>
                                 </div>
 
